@@ -3,10 +3,19 @@
 # and a dictionary, then calculates the sum, average, max, and min.
 
 # Step 1: Get numbers from the user
-user_input = input("Enter numbers separated by spaces: ")
+while True:
+    user_input = input("Enter numbers separated by spaces: ")
 
-# Step 2: Convert the input into a list of numbers
-number_list = [float(num) for num in user_input.split()]
+    try:
+        number_list = []
+
+        for num in user_input.split():
+            number_list.append(float(num))
+
+        break
+
+    except ValueError:
+        print("Invalid input! Please enter numbers only.")
 
 print("\nYour list of numbers:", number_list)
 
